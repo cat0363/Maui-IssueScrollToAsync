@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui_IssueScrollToAsync.MainPage">
+
+    <Grid RowDefinitions="44,*">
+        <StackLayout Grid.Row="0" Orientation="Horizontal" Spacing="5">
+            <Button x:Name="btnTop" Text="Top" Clicked="btnTop_Clicked" BackgroundColor="Blue" TextColor="White" />
+            <Button x:Name="btnStart" Text="Start" Clicked="btnStart_Clicked"  BackgroundColor="Blue" TextColor="White" />
+            <Button x:Name="btnCenter" Text="Center" Clicked="btnCenter_Clicked"  BackgroundColor="Blue" TextColor="White" />
+            <Button x:Name="btnEnd" Text="End" Clicked="btnEnd_Clicked"  BackgroundColor="Blue" TextColor="White" />
+            <Button x:Name="btnMakeVisible" Text="Make Visible" Clicked="btnMakeVisible_Clicked"  BackgroundColor="Blue" TextColor="White" />
+        </StackLayout>
+
+        <ScrollView Grid.Row="1" Orientation="Vertical" x:Name="svTest">
+            <StackLayout Orientation="Vertical" x:Name="slTest" HorizontalOptions="End">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="30,*" HeightRequest="44" WidthRequest="100">
+                            <Label Grid.Column="0" FontSize="18" Text="{Binding No}" TextColor="Black" HorizontalTextAlignment="End" VerticalOptions="Center" />
+                            <Entry Grid.Column="1" FontSize="18" Text="{Binding ItemName}" TextColor="Black" />
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
